@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: path_route
+              uri: http://localhost:8080
+              predicates:
+                - Path=/api/reservation/**
