@@ -8,3 +8,9 @@ spring:
               uri: http://localhost:8080
               predicates:
                 - Path=/api/reservation/**
+              filters:
+                - JwtFilterFactory
+                - name: WaitingCheckFilterFactory
+                  args:
+                    checkApiUrl: http://localhost:8081
+                    redirectUrl: http://localhost:8081
