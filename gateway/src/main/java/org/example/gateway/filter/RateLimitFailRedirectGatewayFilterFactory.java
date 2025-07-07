@@ -3,16 +3,16 @@ package org.example.gateway.filter;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 
 import reactor.core.publisher.Mono;
 
 @Component
-public class RateLimitFailRedirectFilterFactory extends AbstractGatewayFilterFactory<RateLimitFailRedirectFilterFactory.Config> {
+public class RateLimitFailRedirectGatewayFilterFactory
+	extends AbstractGatewayFilterFactory<RateLimitFailRedirectGatewayFilterFactory.Config> {
 
-	public RateLimitFailRedirectFilterFactory() {
+	public RateLimitFailRedirectGatewayFilterFactory() {
 		super(Config.class);
 	}
 
