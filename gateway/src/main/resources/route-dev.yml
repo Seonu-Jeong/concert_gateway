@@ -14,3 +14,13 @@ spring:
                   args:
                     checkApiUrl: http://localhost:8081
                     redirectUrl: http://localhost:8081
+                - name: RateLimitFailRedirectFilterFactory
+                  args:
+                    redirectUrl: http://localhost:8081
+                - name: CustomRedirectRateLimiter
+                  args:
+                    key-resolver: "#{@pathKeyResolver}"
+                    bucket4j-rate-limiter.capacity: 1
+                    bucket4j-rate-limiter.refillTokens: 10
+                    bucket4j-rate-limiter.refillPeriod: 1s
+                    bucket4j-rate-limiter.requestedTokens: 1
