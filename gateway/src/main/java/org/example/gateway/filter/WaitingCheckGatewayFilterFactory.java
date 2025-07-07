@@ -2,21 +2,19 @@ package org.example.gateway.filter;
 
 import java.net.URI;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.http.server.reactive.ServerHttpResponse;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
-public class WaitingCheckFilterFactory extends AbstractGatewayFilterFactory<WaitingCheckFilterFactory.Config> {
+public class WaitingCheckGatewayFilterFactory extends AbstractGatewayFilterFactory<WaitingCheckGatewayFilterFactory.Config> {
 
 	private final WebClient webClient;
 
-	public WaitingCheckFilterFactory(WebClient.Builder webClientBuilder) {
+	public WaitingCheckGatewayFilterFactory(WebClient.Builder webClientBuilder) {
 		super(Config.class);
 		this.webClient = webClientBuilder.build();
 	}

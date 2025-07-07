@@ -22,12 +22,12 @@ import io.jsonwebtoken.Jwts;
 import reactor.core.publisher.Mono;
 
 @Component
-public class JwtFilterFactory extends AbstractGatewayFilterFactory<JwtFilterFactory.Config> {
+public class JwtCheckGatewayFilterFactory extends AbstractGatewayFilterFactory<JwtCheckGatewayFilterFactory.Config> {
 
 	// TODO 키 공유 방법 고려
 	private static final String SECRET_KEY = "YOUR_SECRET_KEY_SHOULD_BE_AT_LEAST_256_BITS_LONG_";
 
-	public JwtFilterFactory() {
+	public JwtCheckGatewayFilterFactory() {
 		super(Config.class);
 	}
 
